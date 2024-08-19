@@ -1,13 +1,14 @@
 const path = require("path");
 
 const config = {
-  entry: "./js/dashboard_main.js",
-  mode: "production",
+    mode: "production",
+    entry: {
+     main: path.resolve(__dirname, './js/dashboard_main.js'), 
+    },
     output: {
+        path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    path: path.resolve(__dirname, "public")
   },
-  plugins: []
 };
 
 module.exports = config;
