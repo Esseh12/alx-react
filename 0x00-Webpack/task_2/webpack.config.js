@@ -8,11 +8,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ["style-loader","csss-loader"],
-        }
-      ],
-    },
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif|svg)/$i,
+        type: 'asset/resource',
+      }
+    ]
+  },
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js',
