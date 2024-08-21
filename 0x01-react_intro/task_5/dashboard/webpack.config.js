@@ -7,15 +7,25 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true, // Clean the dist folder before each build
+    clean: true,
   },
   devServer: {
     static: path.resolve(__dirname, 'dist'),
     hot: true,
-    open: true, // Open browser automatically
+    open: true,
   },
   module: {
     rules: [
+      {
+        test: /\.jsx?$/, // This will match both .js and .jsx files
+        exclude: /node_modules/, // Do not transpile node_modules
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'], // Presets for modern JavaScript and React
+          },
+        },
+      },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
@@ -33,15 +43,18 @@ module.exports = {
           {
             loader: 'image-webpack-loader',
             options: {
-              bypassOnDebug: true, // Bypass optimization in development
-              disable: true, // Disable in development
+              bypassOnDebug: true,
+              disable: true,
             },
           },
         ],
       },
     ],
   },
-  devtool: 'inline-source-map', // Enable inline source maps
+  resolve: {
+    extensions: ['.js', '.jsx'], // Resolve .js and .jsx extensions
+  },
+  devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'dist/index.html'),
