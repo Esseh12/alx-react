@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -56,6 +57,7 @@ module.exports = {
     clean: true, // Clean the output directory before each build
   },
   plugins: [
+     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html', // Use 'index.html' as a template
     }),
