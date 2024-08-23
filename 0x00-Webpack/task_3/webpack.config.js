@@ -62,6 +62,7 @@ module.exports = {
       template: 'index.html', // Use 'index.html' as a template
     }),
   ],
+  devtool: 'inline-source-map',
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'public'), // Serve files from 'public' directory
