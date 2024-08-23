@@ -65,10 +65,10 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'public'), // Serve files from 'public' directory
+      directory: path.resolve(__dirname, 'public'),
     },
     open: true, // Automatically open the browser
-    port: 9000, // Port to run the server on
+    port: 8564, // Port to run the server on
   },
   performance: {
     hints: false, // Disable performance hints during development
