@@ -64,11 +64,9 @@ module.exports = {
   ],
   devtool: 'inline-source-map',
   devServer: {
-    static: {
-      directory: path.resolve(__dirname, 'public'),
-    },
-    open: true, // Automatically open the browser
-    port: 8564, // Port to run the server on
+   contentBase: path.join(__dirname, 'public'),  // Set contentBase to './public'
+    port: 8564,                                  // Set port to 8564
+    hot: true, 
   },
   performance: {
     hints: false, // Disable performance hints during development
