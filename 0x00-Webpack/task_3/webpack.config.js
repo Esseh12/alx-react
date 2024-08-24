@@ -63,11 +63,6 @@ module.exports = {
     }),
   ],
   devtool: 'inline-source-map',
-  devServer: {
-   contentBase: path.join(__dirname, 'public'),  // Set contentBase to './public'
-    port: 8564,                                  // Set port to 8564
-    hot: true, 
-  },
   performance: {
     hints: false, // Disable performance hints during development
   },
