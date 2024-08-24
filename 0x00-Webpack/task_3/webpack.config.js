@@ -63,6 +63,11 @@ module.exports = {
     }),
   ],
   devtool: 'inline-source-map',
+   optimization: {
+    splitChunks: {
+      chunks: 'all',  // This will apply code splitting to all chunks
+    },
+  },
   devServer: {
    contentBase: path.join(__dirname, 'public'),  // Set contentBase to './public'
     port: 8564,// Set port to 8564
