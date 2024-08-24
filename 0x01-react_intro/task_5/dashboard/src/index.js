@@ -1,25 +1,9 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+console.log('Hello, Webpack!');
 
-function Counter() {
-  const [count, setCount] = useState(0);
+const button = document.createElement('button');
+button.textContent = 'Click Me';
+document.body.appendChild(button);
 
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    setCount(count - 1);
-  };
-
-  return (
-    <div className="counter-container">
-      <h1>Counter App</h1>
-      <p>Current Count: {count}</p>
-      <button onClick={increment} className="button increment">Increment</button>
-      <button onClick={decrement} className="button decrement">Decrement</button>
-    </div>
-  );
-}
-
-ReactDOM.render(<Counter />, document.getElementById('app'));
+button.addEventListener('click', () => {
+  alert('Button clicked!');
+});

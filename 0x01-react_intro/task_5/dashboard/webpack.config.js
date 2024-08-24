@@ -47,13 +47,13 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    port: 8564,
-    hot: true,
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',  // This will apply code splitting to all chunks
+    static: {
+      directory: path.join(__dirname, 'public'), // Use 'static' instead of 'contentBase'
     },
+    port: 8564, // Set the port
+    hot: true, // Enable hot reloading
+  },
+   stats: {
+    children: true, // Enable stats for child compilations
   },
 };
