@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App-header {
+  border-bottom: 2px solid red;
+  display: flex;
+  align-items: center;
+  color: rgb(214, 19, 19);
+  font-weight: bold;
+}
+
+.App-header img {
+  width: 200px;
+  height: 200px;
+}
+
+.App-body {
+  height: 60vh;
+  border-bottom: 2px solid red;
+  padding-top: 3rem;
+  padding-left: 2rem;
+}
+
+.App-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
