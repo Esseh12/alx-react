@@ -2,3 +2,13 @@ div {
     border: 1px dotted #cb2727;
     padding: 1.5rem;
 }
+
+/* Style for items with default priority */
+li[data-priority="default"] {
+    color: blue;
+}
+
+/* Style for items with urgent priority */
+li[data-priority="urgent"] {
+    color: red;
+}
